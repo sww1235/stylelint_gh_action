@@ -21,15 +21,6 @@ if [ ! -e stylelint_path ]; then
   yarn add stylelint stylelint-config-standard --silent
 fi
 
-if [ ! "$(echo ${configPath}.stylelintrc*)" != "${configPath}.stylelintrc*" ]; then
-  echo "{
-  \"extends\": \"stylelint-config-standard\",
-  \"rules\": {
-    \"indentation\": "$indentSpaces"
-  }
-}" > .stylelintrc
-fi
-
 echo "${stylelint_path}" >> $GITHUB_PATH
 
 echo $pattern
